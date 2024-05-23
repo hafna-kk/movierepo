@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+<p>Are you sure you want to delete "{{ movie.title }}"?</p>
+<form action="{% url 'movie:delete_movie' movie.id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Yes, delete">
+</form>
